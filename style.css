@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #fff;
+  background-color: #111;
+}
+
+canvas#coracoes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #ff4d6d;
+}
+
+p {
+  margin: 15px 0;
+  line-height: 1.5;
+  color: #ff4d6d;
+}
+
+.carousel {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+  overflow: hidden;
+  height: 400px; /* define altura para o carrossel */
+}
+
+.carousel-track {
+  position: relative;
+  height: 100%;
+}
+
+.carousel-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  pointer-events: none; /* desabilita clique quando invisível */
+}
+
+.carousel-item.active {
+  opacity: 1;
+  position: relative;
+  pointer-events: auto; /* ativa clique no slide visível */
+}
+
+.carousel-item video,
+.carousel-item img {
+  max-width: 100%;
+  max-height: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+#prev, #next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.3);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 5px 10px;
+  cursor: pointer;
+  user-select: none;
+  z-index: 10;
+}
+
+#prev { left: 8px; }
+#next { right: 8px; }
+
+.carousel-indicators {
+  text-align: center;
+  margin-top: 12px;
+}
+
+.carousel-indicators button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 6px;
+  border: none;
+  background-color: white;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-indicators button.active {
+  opacity: 1;
+}
