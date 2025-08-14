@@ -114,3 +114,15 @@ p {
 .carousel-indicators button.active {
   opacity: 1;
 }
+
+.video-unico {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.video-unico video {
+  width: 80%;
+  max-width: 300px;
+  border-radius: 10px;
+}
